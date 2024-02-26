@@ -210,3 +210,25 @@ def update_charts(filter_axis):
     )
 
     return treemap, map_state, columns, data , barchart, barchart_tkm, lineplot_revenue,lineplot_growth
+# Update Cards
+def update_cards_content(filter_axis):
+    df_grouped, df_table = etl_instance.etl_barchart_table(filter_axis)
+
+    amt_sales = df_grouped['Quantity Ordered'].sum()
+    revenue = df_grouped['Revenue'].sum()
+    average_ticket = str(round(revenue / amt_sales,2))
+    profit = df_grouped['Profit Margin'].sum()
+    perc_profit = str(round(100 * profit / revenue,2)) + '%'
+
+    # Generate content for each card
+    card_1_content = "Amount Sales: {:,.0f}".format(float(amt_sales))
+    card_2_content = "Revenue: ${:,.2f}".format(float(revenue))
+    # Assuming average_ticket is a numeric value
+    card_3_content = "Average Ticket: ${:,.2f}".format(float(average_ticket))
+    card_4_content = "Gross Profit: ${:,.2f}".format(float(profit))
+    card_5_content = f"% Profit: {perc_profit}"
+
+    return card_1_content, card_2_content, card_3_content, card_4_content, card_5_content
+
+
+    

@@ -10,10 +10,10 @@ style_card = style={'width': '70%', 'backgroundColor': '#1c1e1c', 'color':'#fefd
 def create_layout():
     return dbc.Container(
         fluid=True,
-        style={'backgroundColor': '#738678'},
+        style={'backgroundColor': '#1e0000'},
         children=[
             html.Br(),
-            html.A(html.Button('Back'), href='/home', style={'position': 'absolute', 'top': 5, 'left': 10}),
+            html.A(html.Button('Back'), href='/index', style={'position': 'absolute', 'top': 5, 'left': 10}),
             html.A(
                 html.H3('Dashboard - Finance and Controlling'),
                 style={

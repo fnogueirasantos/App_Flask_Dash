@@ -8,7 +8,7 @@ def create_layout():
     return dbc.Container(
         [
             html.Br(),
-            html.A(html.Button('Back'), href='/home', style={'position': 'absolute', 'top': 5, 'left': 10}),
+            html.A(html.Button('Back'), href='/index', style={'position': 'absolute', 'top': 5, 'left': 10}),
             html.A(html.H3('Dashboard - Airline Passenger Satisfaction'), style={'position': 'absolute', 'top': 3, 'left': 100}),
             html.Br(),
             dbc.Row(

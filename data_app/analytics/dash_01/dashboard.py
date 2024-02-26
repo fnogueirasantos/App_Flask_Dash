@@ -6,12 +6,13 @@ import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 import dash_bootstrap_components as dbc
 from dash import Dash
+import secrets
 
 # Assuming etl.Etl is your class
 etl_instance = Etl()
 
 def create_dashboard_01(server):
-    dash_app1 = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], server=server, url_base_pathname='/dashboard1/')
+    dash_app1 = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], server=server, url_base_pathname=f'/{secrets.token_hex(10)}/')
     
     # Set the layout
     dash_app1.layout = create_layout()

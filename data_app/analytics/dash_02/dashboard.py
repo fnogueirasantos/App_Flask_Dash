@@ -6,6 +6,7 @@ from .layout import create_layout
 from .callbacks import update_cards, update_charts, waterfall_dre, df_dre, get_sub_account
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
+import secrets
 
 # Create an instance of the Etl class
 etl_instance = Etl()
@@ -14,7 +15,7 @@ etl_instance = Etl()
 style_card = style={'width': '70%', 'backgroundColor': '#1c1e1c', 'color':'#fefdfd'}
 
 def create_dashboard_02(server):
-    dash_app2 = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], server=server, url_base_pathname='/dashboard2/')
+    dash_app2 = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], server=server, url_base_pathname=f'/{secrets.token_hex(10)}/')
     
     # Set the layout
     dash_app2.layout = create_layout()

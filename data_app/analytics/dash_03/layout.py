@@ -10,7 +10,7 @@ def create_layout():
     return dbc.Container(
         [
             html.Br(),
-            html.A(html.Button('Back'), href='/home', style={'position': 'absolute', 'top': 5, 'left': 10}),
+            html.A(html.Button('Back'), href='/index', style={'position': 'absolute', 'top': 5, 'left': 10}),
             html.A(html.H3('Dashboard - Technology Equipments Sales'), style={'position': 'absolute', 'top': 3, 'left': 100}),
             html.Br(),
             dbc.Row(
@@ -24,27 +24,28 @@ def create_layout():
                     dbc.Col(
                         dbc.Card(
                             dbc.CardBody(id="card2"),
-                            style=style_card, className="border-0"
+                            style={'width': '100%', 'color': '#176612'}
+                            , className="border-0"
                         )
                     ),
                     dbc.Col(
                         dbc.Card(
                             dbc.CardBody(id="card3"),
-                            style={'width': '100%', 'color': '#176612'},
+                            style={'width': '100%', 'color': '#224047'},
                             className="border-0"
                         )
                     ),
                     dbc.Col(
                         dbc.Card(
                             dbc.CardBody(id="card4"),
-                            style={'width': '100%', 'color': '#737305'},
+                            style={'width': '100%', 'color': '#1d1d81'},
                             className="border-0"
                         )
                     ),
                     dbc.Col(
                         dbc.Card(
                             dbc.CardBody(id="card5"),
-                            style={'width': '100%', 'color': '#d9200b'},
+                            style={'width': '100%', 'color': '#1d1d81'},
                             className="border-0"
                         )
                     ),
@@ -89,6 +90,7 @@ def create_layout():
                                                     ],
                                                     value='Category',
                                                     clearable=False,
+                                                    style={'color': 'black'}
                                                 )
                                             ]
                                             )
